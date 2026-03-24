@@ -2,6 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+/.vs/slnx.sqlite-journal/.gitignore
 /.vs/gratitude journal.slnx/FileContentIndex/ef666624-10fe-4e79-9743-2a6c17f05ccb.vsidx
 /.vs/gratitude journal/CopilotIndices/18.4.106.63888/CodeChunks.db
 /.vs/gratitude journal/CopilotIndices/18.4.106.63888/CodeChunks.db-shm
@@ -13,3 +14,4 @@
 /.vs/gratitude journal.slnx/FileContentIndex/cf0c11cc-4b3c-46f8-83c9-82eae09c3fab.vsidx
 /.vs/slnx.sqlite
 /.vs/slnx.sqlite-journal
+/.vs/gratitude journal.slnx/v18/.wsuo
