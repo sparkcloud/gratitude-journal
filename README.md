@@ -10,3 +10,5 @@ I am now in the process of refamiliarizing myself with git and working with loca
 
 Today, I am grateful for having the motivation to continue with the pursuit curriculum and exposing myself to new technologies and concepts.
 I aim to understand and implement the tools I'm presented with to broaden my skillset and to sharpen my problem-solving abilities.
+
+I have created a branch for my latest journal entry and will review this commit on github
