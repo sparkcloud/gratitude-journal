@@ -1,0 +1,105 @@
+/* Keep your existing :root and body styles */
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --primary-color: #4a90e2;
+    --card-bg: #ffffff;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 2rem;
+}
+
+.app-container { max-width: 800px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 2rem; }
+
+/* NEW CALENDAR STYLES */
+.calendar-wrapper {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.nav-btn {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-btn:hover { background-color: #f0f0f0; }
+
+.calendar-weekdays, .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Forces 7 equal columns */
+    gap: 5px;
+    text-align: center;
+}
+
+.calendar-weekdays div {
+    font-weight: bold;
+    color: #888;
+    padding-bottom: 10px;
+}
+
+.calendar-day {
+    padding: 15px 5px;
+    border-radius: 4px;
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    color: #ccc; /* Default to greyed out if no entry */
+}
+
+/* Style for days that have a journal entry */
+.calendar-day.has-entry {
+    background-color: #eef5ff;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.calendar-day.has-entry:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.calendar-day.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+}
+
+.calendar-day.empty {
+    background-color: transparent;
+    border: none;
+}
+
+/* Journal Entry Display Styles */
+.journal-container {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    min-height: 200px;
+}
+
+.placeholder-text { text-align: center; color: #888; font-style: italic; }
