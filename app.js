@@ -1,11 +1,11 @@
 // Replace this with the RAW URL of your markdown file on GitHub
 // Example: 'https://raw.githubusercontent.com/sparkcloud/my-repo/main/readme.md'
 const RAW_GITHUB_URL = 'https://raw.githubusercontent.com/sparkcloud/gratitude-journal/refs/heads/master/README.md';
-
-// Object to store our parsed data: { "03/23/2026": "Markdown text...", ... }
 const journalEntries = {};
 
-// 1. Fetch and Parse the Data
+// Calendar State
+let currentDisplayDate = new Date(); // Defaults to today
+
 async function initJournal() {
     try {
         const response = await fetch(RAW_GITHUB_URL);
@@ -13,69 +13,98 @@ async function initJournal() {
         
         const markdownText = await response.text();
         parseMarkdown(markdownText);
-        renderCalendar();
+        
+        setupEventListeners();
+        renderCalendar(); // Draw the calendar!
         
     } catch (error) {
         console.error("Error loading journal:", error);
-        document.getElementById('journal-display').innerHTML = 
-            `<p style="color: red;">Error loading entries. Check the console and ensure your RAW GitHub URL is correct.</p>`;
     }
 }
 
-// 2. The Regex Parsing Logic
 function parseMarkdown(text) {
-    // The Regex designed for your specific format
     const entryRegex = /## Date: (\d{2}\/\d{2}\/\d{4})\s+([\s\S]*?)(?=(?:## Date:)|$)/g;
-    
     for (const match of text.matchAll(entryRegex)) {
-        const dateStr = match[1];      // e.g., "03/23/2026"
-        const content = match[2].trim(); // The journal text
-        
-        journalEntries[dateStr] = content;
+        journalEntries[match[1]] = match[2].trim();
     }
 }
 
-// 3. Render the Digital Calendar Tiles
-function renderCalendar() {
-    const calendarGrid = document.getElementById('calendar-grid');
-    calendarGrid.innerHTML = ''; // Clear out loading states
+function setupEventListeners() {
+    document.getElementById('prev-month').addEventListener('click', () => {
+        currentDisplayDate.setMonth(currentDisplayDate.getMonth() - 1);
+        renderCalendar();
+    });
 
-    // Extract the dates and sort them (optional, but good for organization)
-    const dates = Object.keys(journalEntries);
-    
-    dates.forEach(date => {
-        const tile = document.createElement('div');
-        tile.classList.add('calendar-tile');
-        
-        // Make the date display a bit cleaner (e.g., "03/23")
-        const shortDate = date.substring(0, 5);
-        tile.innerText = shortDate; 
-        
-        tile.addEventListener('click', () => {
-            // Remove active class from all tiles, add to the clicked one
-            document.querySelectorAll('.calendar-tile').forEach(t => t.classList.remove('active'));
-            tile.classList.add('active');
-            
-            displayEntry(date);
-        });
-        
-        calendarGrid.appendChild(tile);
+    document.getElementById('next-month').addEventListener('click', () => {
+        currentDisplayDate.setMonth(currentDisplayDate.getMonth() + 1);
+        renderCalendar();
     });
 }
 
-// 4. Display the Entry
+function renderCalendar() {
+    const year = currentDisplayDate.getFullYear();
+    const month = currentDisplayDate.getMonth(); // 0-indexed (0 = Jan, 11 = Dec)
+    
+    // Update the Header text (e.g., "March 2026")
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    document.getElementById('month-year-display').innerText = `${monthNames[month]} ${year}`;
+
+    const calendarGrid = document.getElementById('calendar-grid');
+    calendarGrid.innerHTML = ''; // Clear previous days
+
+    // Get the first day of the month (0 = Sun, 1 = Mon...)
+    const firstDayIndex = new Date(year, month, 1).getDay();
+    // Get total days in the current month
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // 1. Fill in blank days at the start of the month
+    for (let i = 0; i < firstDayIndex; i++) {
+        const emptyDiv = document.createElement('div');
+        emptyDiv.classList.add('calendar-day', 'empty');
+        calendarGrid.appendChild(emptyDiv);
+    }
+
+    // 2. Fill in the actual days
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayDiv = document.createElement('div');
+        dayDiv.classList.add('calendar-day');
+        dayDiv.innerText = day;
+
+        // Format date to match your Markdown (MM/DD/YYYY)
+        // String().padStart(2, '0') ensures single digits become "03" instead of "3"
+        const formattedMonth = String(month + 1).padStart(2, '0');
+        const formattedDay = String(day).padStart(2, '0');
+        const dateKey = `${formattedMonth}/${formattedDay}/${year}`;
+
+        // Check if this date exists in our parsed Markdown dictionary
+        if (journalEntries[dateKey]) {
+            dayDiv.classList.add('has-entry');
+            
+            dayDiv.addEventListener('click', () => {
+                // Remove active styling from all days, add to this one
+                document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('active'));
+                dayDiv.classList.add('active');
+                
+                displayEntry(dateKey);
+            });
+        }
+
+        calendarGrid.appendChild(dayDiv);
+    }
+}
+
 function displayEntry(dateStr) {
     const displayContainer = document.getElementById('journal-display');
     const rawMarkdown = journalEntries[dateStr];
     
     if (rawMarkdown) {
-        // Use marked.js to render the markdown into HTML formatting
         displayContainer.innerHTML = `
-            <h3 style="margin-top: 0; color: var(--primary-color);">Entry for ${dateStr}</h3>
+            <h3 style="margin-top: 0; color: var(--primary-color); border-bottom: 2px solid #eee; padding-bottom: 10px;">
+                Journal Entry: ${dateStr}
+            </h3>
             ${marked.parse(rawMarkdown)}
         `;
     }
 }
 
-// Kickstart the application
 initJournal();
