@@ -18,3 +18,7 @@ I have created a branch for my latest journal entry and will review this commit 
 Today, I worked on root cause analysis exercises where I researched and practiced at identifying the possible root causes of problems
 people and industries face to propose IT solutions to. I am grateful for putting the effort in to building my ability to identify, analyze
 and prioritize solutions. I hope to continue to broaden my technical skillset to be able to apply this to real world applications.
+
+## Date: 03/29/2026
+
+Today,
