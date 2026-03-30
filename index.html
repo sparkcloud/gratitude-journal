@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joffre M. - github profile</title>
-    <link rel="stylesheet" href="/css/style_main.css">
+    <link rel="stylesheet" href="src/styles/main_style.css">
 </head>
 <body>
 
     <nav id="sidebar">
         <h2>Navigation</h2>
-        <a href="javascript:void(0)" onclick="loadPage('/html/about.html', this)" class="active">About me</a>
-        <a href="javascript:void(0)" onclick="loadPage('/html/skills.html', this)">Skills</a>
-        <a href="javascript:void(0)" onclick="loadPage('/html/projects.html', this)">Projects</a>
-        <a href="javascript:void(0)" onclick="loadPage('/html/graditude_journal.html', this)">Graditude journal</a>
+        <a href="javascript:void(0)" onclick="loadPage('src/pages/about.html', this)" class="active">About me</a>
+        <a href="javascript:void(0)" onclick="loadPage('src/pages/skills.html', this)">Skills</a>
+        <a href="javascript:void(0)" onclick="loadPage('src/pages/projects.html', this)">Projects</a>
+        <a href="javascript:void(0)" onclick="loadPage('src/pages/graditude_journal.html', this)">Graditude journal</a>
     </nav>
 
     <main>
-        <iframe id="content-frame" src="about.html" title="Main Content Viewer"></iframe>
+        <iframe id="content-frame" src="src/pages/about.html" title="Main Content Viewer"></iframe>
     </main>
 
-    <script src="/src/nav_menu.js"></script>
+    <script src="src/utils/nav_menu.js"></script>
 </body>
 </html>
