@@ -31,3 +31,10 @@ and investors.
 
 Overall, I am grateful for the content in todays lesson at pursuit to push me into thinking critically about design and intent on
 projects even before starting the technical implementation.
+
+## Date: 03/31/2026
+
+Today, I worked on creating a live web application for a career tool assistant for young adults. The repo was created and a basic web
+form has been created to simulate user input for proof of concept for the app. It required a lot of research into using supabase 
+as a backend. I am grateful for the opportunity to learn how to use this new tool and to be able to apply it to a project. 
+I hope to continue to make strides in the feautures for the app.
