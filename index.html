@@ -1,46 +1,25 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>Git Gratitude Journal</title>
-				<link rel="stylesheet" href="style.css">
-					<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-				</head>
-	<body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joffre M. - github profile</title>
+    <link rel="stylesheet" href="src/styles/main_style.css">
+</head>
+<body>
 
-		<main class="app-container">
-			<header>
-				<h1>My Gratitude Journal</h1>
-				<p>Select a highlighted date below to view the entry.</p>
-			</header>
+    <nav id="sidebar">
+        <h2>Navigation</h2>
+        <a href="javascript:void(0)" onclick="loadPage('src/pages/about.html', this)" class="active">About me</a>
+        <a href="javascript:void(0)" onclick="loadPage('src/pages/skills.html', this)">Skills</a>
+        <a href="javascript:void(0)" onclick="loadPage('src/pages/projects.html', this)">Projects</a>
+        <a href="javascript:void(0)" onclick="loadPage('src/pages/graditude_journal.html', this)">Graditude journal</a>
+    </nav>
 
-			<section class="calendar-wrapper">
-				<div class="calendar-header">
-					<button id="prev-month" class="nav-btn">&lt; Prev</button>
-					<h2 id="month-year-display">Month Year</h2>
-					<button id="next-month" class="nav-btn">Next &gt;</button>
-				</div>
+    <main>
+        <iframe id="content-frame" src="src/pages/about.html" title="Main Content Viewer"></iframe>
+    </main>
 
-				<div class="calendar-weekdays">
-					<div>Sun</div>
-					<div>Mon</div>
-					<div>Tue</div>
-					<div>Wed</div>
-					<div>Thu</div>
-					<div>Fri</div>
-					<div>Sat</div>
-				</div>
-
-				<div id="calendar-grid" class="calendar-grid">
-				</div>
-			</section>
-
-			<section id="journal-display" class="journal-container">
-				<div class="placeholder-text">Waiting for a date selection...</div>
-			</section>
-		</main>
-
-		<script src="app.js"></script>
-	</body>
+    <script src="src/utils/nav_menu.js"></script>
+</body>
 </html>
