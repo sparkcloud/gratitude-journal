@@ -38,3 +38,10 @@ Today, I worked on creating a live web application for a career tool assistant f
 form has been created to simulate user input for proof of concept for the app. It required a lot of research into using supabase 
 as a backend. I am grateful for the opportunity to learn how to use this new tool and to be able to apply it to a project. 
 I hope to continue to make strides in the feautures for the app.
+
+## Date: 04/04/2026
+
+Today, we focused on noticing patterns in our daily routines and identifying areas of automation to save on time and energy. We are
+to build a project that focuses on one workflow we ourselves doing regularly and I chose to do a workout routine tracker. I 
+am grateful to have the program push me into thinking about areas of life that can be aided with the automation and aim to test my
+technical ability in creating a tool for it.
