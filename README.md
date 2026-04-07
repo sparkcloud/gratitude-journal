@@ -45,3 +45,10 @@ Today, we focused on noticing patterns in our daily routines and identifying are
 to build a project that focuses on one workflow we ourselves doing regularly and I chose to do a workout routine tracker. I 
 am grateful to have the program push me into thinking about areas of life that can be aided with the automation and aim to test my
 technical ability in creating a tool for it.
+
+## Date: 04/06/2026
+
+Today, we researched into what package managers are and what they can offer developers with their build projects. I am grateful to
+have had this opportunity to learn about this feature in builds and to really understand what benefits are gained in using them. From
+their ability to manage and update dependencies to providing a level of security in the packages used, the time spent diving into this
+topic was well spent. It provides further context on how and why professionals in the field work with these tools.
