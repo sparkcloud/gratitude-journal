@@ -52,3 +52,10 @@ Today, we researched into what package managers are and what they can offer deve
 have had this opportunity to learn about this feature in builds and to really understand what benefits are gained in using them. From
 their ability to manage and update dependencies to providing a level of security in the packages used, the time spent diving into this
 topic was well spent. It provides further context on how and why professionals in the field work with these tools.
+
+## Date: 04/07/2026
+
+Today, we reviwed what the differences are between a successful and failed minimum viable product (MVP). Some of the takeaways from
+this research were to have the scope of the MVP be narrow and focused on a specific problem and to avoid feature creep or the pursuit
+of extraneous goals before having a solid product to iterate on. I am grateful for this reminder as I work on my own projects and aim
+to have a completed build by the end of the week.
