@@ -59,3 +59,10 @@ Today, we reviwed what the differences are between a successful and failed minim
 this research were to have the scope of the MVP be narrow and focused on a specific problem and to avoid feature creep or the pursuit
 of extraneous goals before having a solid product to iterate on. I am grateful for this reminder as I work on my own projects and aim
 to have a completed build by the end of the week.
+
+## Date: 04/08/2026
+
+Today is the final build day in the pursuit office for the week. We focused on how to market ourselves and the workflow automation 
+project we've been tasked with working on. I haven't had much success in meeting any milestones for the project and I'm hoping to do
+so in the free days we have before our presentations on saturday. I am grateful to be involved in the pursuit community to recognize
+I'm not alone in my efforts.
