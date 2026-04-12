@@ -66,3 +66,10 @@ Today is the final build day in the pursuit office for the week. We focused on h
 project we've been tasked with working on. I haven't had much success in meeting any milestones for the project and I'm hoping to do
 so in the free days we have before our presentations on saturday. I am grateful to be involved in the pursuit community to recognize
 I'm not alone in my efforts.
+
+## Date: 04/11/2026
+
+Today we delved into the topic of data. We researched the different types of data that exist for applications like structured, 
+unstructured, semi-structured data and how are each of these types represented. We looked into data collection, privacy and ownership
+when it came to commercial apps and considerations we should have going into the development of our own applications. I am grateful to
+have had this topic brought up for my own considerations into my own work and to be a more informed consumer and builder of software.
