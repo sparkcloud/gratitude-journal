@@ -73,3 +73,10 @@ Today we delved into the topic of data. We researched the different types of dat
 unstructured, semi-structured data and how are each of these types represented. We looked into data collection, privacy and ownership
 when it came to commercial apps and considerations we should have going into the development of our own applications. I am grateful to
 have had this topic brought up for my own considerations into my own work and to be a more informed consumer and builder of software.
+
+## Date: 04/12/2026
+
+Today, we did some research into data schemas and the policies and controversies companies today account for in the AI space. Along with
+the research, I worked on creating a few ideas for this weeks project with the intent of using or collecting data being essential to how 
+the tool works. It is indeed something I haven't considered with builds for an application so I am grateful for this opportunity to
+push me out of my comfort zone heading into this weeks project. I decided to attempt at a gamer habit analyzer using steams web API.
